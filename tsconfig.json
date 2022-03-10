@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+      "target": "esnext",
+      "module": "commonjs",
+      "sourceMap": true,
+      "outDir": "./js/",
+  },
+  "files": [
+    "./src/index.ts",
+    "./src/logger.ts",
+    "./src/command.ts",
+    "./src/cmd/ping.ts",
+    "./src/cmd/game.ts",
+  ],
+}
