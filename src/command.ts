@@ -29,7 +29,7 @@ let commands: Object
 
 const initcommand: Function = async function(){
    let cmds:Object =[]
-   let cmddir = fs.readdirSync('src\\cmd')
+   let cmddir = fs.readdirSync(path.resolve(__dirname, './cmd/'))
    let cmdc = []
    cmddir.forEach(element =>{
         cmdc.push(path.parse(element).name)
