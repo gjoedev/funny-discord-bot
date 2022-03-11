@@ -29,14 +29,14 @@ let commands: Object
 
 const initcommand: Function = async function(){
    let cmds:Object =[]
-   let cmddir = fs.readdirSync(path.resolve(__dirname, './cmd/'))
+   let cmddir = fs.readdirSync(path.resolve(__dirname, './cmd/')).filter(file => file.endsWith('.js'))
    let cmdc = []
    cmddir.forEach(element =>{
         cmdc.push(path.parse(element).name)
    })
    for(const command of cmdc){
        log('Registering command ' + command)
-       cmds[command] = require("./cmd/" + command + ".js") //added .js so it works when compiled to javascript
+       cmds[command] = require("./cmd/" + command) 
        if(command.register in cmds[command]){
            command.register()
        }
