@@ -14,13 +14,13 @@ if(cfg.usecustompath){
     google = new Scraper({
         puppeteer: {
             headless: false,
+            executeablePath: cfg.custompath
         }
     })
 }else{
     google = new Scraper({
         puppeteer:{
             headless: false,
-            executeablePath: cfg.custompath
         }
     })
 }
