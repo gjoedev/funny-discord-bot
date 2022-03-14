@@ -5,16 +5,25 @@ import {log} from './logger'
 import {init} from "./gamemanager"
 const Scraper = require("images-scraper")
 const cfg = require("../config/config.json")
-
+let google
 let games: Array<String> = []
 
 log("Initiating commands...")
 initcommand()
-const google = new Scraper({
-    puppeteer:{
-        headless: true
-    }
-})
+if(cfg.usecustompath){
+    google = new Scraper({
+        puppeteer: {
+            headless: false,
+        }
+    })
+}else{
+    google = new Scraper({
+        puppeteer:{
+            headless: false,
+            executeablePath: cfg.custompath
+        }
+    })
+}
 
 const client = new Client({
     intents:[

@@ -1,5 +1,7 @@
 {
     "token": "bot-token",
     "prefix": "%",
-    "mainchannel": "main-channel"
+    "mainchannel": "main-channel",
+    "customchromepath" : false,
+    "custompath": "custom path (use only if customchromepath is set to true)"
 }
